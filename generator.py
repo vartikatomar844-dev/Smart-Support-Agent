@@ -1,5 +1,5 @@
 def generate_response(ticket, docs, escalate):
     if escalate:
-        return "This issue requires human support. Escalating..."
+        return "This issue is sensitive and has been escalated to human support."
 
-    return f"Based on our docs: {docs[:200]}"
+    return f"Based on documentation: {docs[:200]}"
