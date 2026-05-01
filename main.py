@@ -8,7 +8,6 @@ from generator import generate_response
 
 df = pd.read_csv("tickets/support_issues.csv")
 
-
 print("Columns:", df.columns)
 
 results = []
