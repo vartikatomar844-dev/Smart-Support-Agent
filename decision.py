@@ -4,3 +4,4 @@ def should_escalate(issue):
     if issue in sensitive:
         return True
     return False
+    
