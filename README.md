@@ -41,22 +41,29 @@ This project solves that by building a **rule-based + retrieval-driven AI pipeli
 ## Project Structure
 
 smart-support-agent/
+
 │── data/
+
 │   ├── hackerrank_docs.txt
 │   ├── claude_docs.txt
 │   ├── visa_docs.txt
-│
+
 │── tickets/
+
 │   └── support_issues.csv
-│
+
 │── classifier.py
+
 │── retriever.py
+
 │── decision.py
+
 │── generator.py
+
 │── utils.py
+
 │── main.py
-│── output.csv
-│── log.txt
+
 │── README.md
 
 
