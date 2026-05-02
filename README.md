@@ -8,11 +8,6 @@ This project is a **terminal-based AI support agent** built for the HackerRank O
 
 The system processes customer support tickets across multiple domains and intelligently:
 
-* Classifies the issue
-* Identifies the correct platform (HackerRank / Claude / Visa)
-* Retrieves relevant documentation
-* Decides whether to respond or escalate
-* Generates safe, grounded responses
 
 
 ## Problem Statement
@@ -41,16 +36,6 @@ This project solves that by building a **rule-based + retrieval-driven AI pipeli
 ## Project Structure
 
 smart-support-agent/
-
-│── data/
-
-│   ├── hackerrank_docs.txt
-│   ├── claude_docs.txt
-│   ├── visa_docs.txt
-
-│── tickets/
-
-│   └── support_issues.csv
 
 │── classifier.py
 
@@ -134,16 +119,12 @@ python main.py
 * `log.txt` → Chat transcript
 
 
-##  Author
-
-Built as part of a hackathon submission.
 
 
 ## 🏁 Conclusion
 
 This project demonstrates a **safe, structured, and scalable approach** to building AI-powered support systems that:
 
-* Avoid hallucination
 * Handle sensitive cases responsibly
 * Provide reliable assistance across domains
 
