@@ -1,8 +1,8 @@
 # Smart-Support-Agent
 
-# 🧠 Multi-Domain Support Triage Agent
+# Multi-Domain Support Triage Agent
 
-## 🚀 Overview
+## Overview
 
 This project is a **terminal-based AI support agent** built for the HackerRank Orchestrate Hackathon.
 
@@ -14,9 +14,8 @@ The system processes customer support tickets across multiple domains and intell
 * Decides whether to respond or escalate
 * Generates safe, grounded responses
 
----
 
-## 🧩 Problem Statement
+## Problem Statement
 
 Support systems must handle diverse user queries while ensuring:
 
@@ -27,23 +26,20 @@ Support systems must handle diverse user queries while ensuring:
 
 This project solves that by building a **rule-based + retrieval-driven AI pipeline**.
 
----
 
-## ⚙️ Features
+## Features
 
-* ✅ Multi-domain ticket handling (HackerRank, Claude, Visa)
-* ✅ Issue classification (billing, access, general, etc.)
-* ✅ Context retrieval from provided support corpus
-* ✅ Escalation for sensitive cases (fraud, billing, account access)
-* ✅ Safe response generation (no hallucinations)
-* ✅ Logging for chat transcript submission
-* ✅ CSV output generation for evaluation
+*  Multi-domain ticket handling (HackerRank, Claude, Visa)
+*  Issue classification (billing, access, general, etc.)
+*  Context retrieval from provided support corpus
+*  Escalation for sensitive cases (fraud, billing, account access)
+*  Safe response generation (no hallucinations)
+*  Logging for chat transcript submission
+*  CSV output generation for evaluation
 
----
 
-## 🏗️ Project Structure
+## Project Structure
 
-```
 smart-support-agent/
 │── data/
 │   ├── hackerrank_docs.txt
@@ -62,13 +58,11 @@ smart-support-agent/
 │── output.csv
 │── log.txt
 │── README.md
-```
 
----
 
-## 🔄 System Pipeline
 
-```
+## System Pipeline
+
 Ticket Input
    ↓
 Text Cleaning (utils.py)
@@ -82,11 +76,9 @@ Decision Engine (decision.py)
 Response Generation (generator.py)
    ↓
 Logging + CSV Output
-```
 
----
 
-## 🧠 Approach
+## Approach
 
 ### 1. Classification
 
@@ -114,19 +106,13 @@ Logging + CSV Output
 * If safe → respond using retrieved docs
 * If sensitive → escalate to human support
 
----
 
-## 🛡️ Safety Measures
 
-* ❌ No external knowledge used
-* ❌ No fabricated answers
-* ✅ Strict reliance on provided corpus
-* ✅ Sensitive issue detection
-* ✅ Escalation handling
 
----
 
-## ▶️ How to Run
+
+
+##  How to Run
 
 ### 1. Install dependencies
 
