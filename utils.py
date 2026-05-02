@@ -1,7 +1,10 @@
-import os
 import re
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 def clean_text(text):
@@ -46,10 +49,14 @@ def is_sensitive(text):
 
 
 def normalize_domain(domain):
-    domain = domain.lower()
+    domain = clean_text(domain)
     if "visa" in domain:
         return "visa"
     elif "claude" in domain:
         return "claude"
     else:
         return "hackerrank"
+
+
+def project_path(*parts):
+    return BASE_DIR.joinpath(*parts)

@@ -1,38 +1,67 @@
 import pandas as pd
+from zipfile import ZipFile
 
-from classifier import classify_ticket
+from classifier import classify_row
 from retriever import retrieve_docs
-from decision import should_escalate
+from decision import should_escalate_ticket
 from generator import generate_response
+from utils import clean_text, project_path, save_to_csv
 
 
-df = pd.read_csv("tickets/support_issues.csv")
+ZIP_PATH = project_path("tickets", "support_tickets.zip")
+CSV_IN_ZIP = "support_tickets/support_tickets.csv"
+OUTPUT_PATH = project_path("output.csv")
 
-print("Columns:", df.columns)
 
-results = []
+def load_tickets():
+    if not ZIP_PATH.exists():
+        raise FileNotFoundError(f"Input file not found: {ZIP_PATH}")
 
-for index, row in df.iterrows():
-    
-    ticket = row['ticket']   
+    with ZipFile(ZIP_PATH) as archive:
+        with archive.open(CSV_IN_ZIP) as file:
+            df = pd.read_csv(file)
 
-    domain, issue = classify_ticket(ticket)
+    required_columns = {"Issue", "Subject", "Company"}
+    missing_columns = required_columns.difference(df.columns)
+    if missing_columns:
+        missing = ", ".join(sorted(missing_columns))
+        raise ValueError(f"CSV is missing required column(s): {missing}")
 
-    docs = retrieve_docs(domain)
+    return df
 
-    escalate = should_escalate(issue)
 
-    response = generate_response(ticket, docs, escalate)
+def process_tickets(df):
+    results = []
 
-    results.append({
-        "ticket": ticket,
-        "domain": domain,
-        "issue": issue,
-        "escalate": escalate,
-        "response": response
-    })
+    for _, row in df.iterrows():
+        ticket = clean_text(row["Issue"])
+        subject = row["Subject"]
 
-output_df = pd.DataFrame(results)
-output_df.to_csv("output.csv", index=False)
+        domain, issue = classify_row(row)
+        docs = retrieve_docs(domain)
+        escalate = should_escalate_ticket(ticket, issue)
+        response = generate_response(ticket, docs, escalate)
 
-print("Done! Output saved as output.csv")
+        results.append(
+            {
+                "subject": subject,
+                "ticket": ticket,
+                "domain": domain,
+                "issue": issue,
+                "escalate": escalate,
+                "response": response,
+            }
+        )
+
+    return results
+
+
+def main():
+    df = load_tickets()
+    results = process_tickets(df)
+    save_to_csv(results, OUTPUT_PATH)
+    print(f"Done. Processed {len(results)} tickets.")
+
+
+if __name__ == "__main__":
+    main()
