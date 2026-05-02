@@ -107,11 +107,6 @@ Logging + CSV Output
 * If sensitive → escalate to human support
 
 
-
-
-
-
-
 ##  How to Run
 
 ### 1. Install dependencies
@@ -131,51 +126,11 @@ python main.py
 * `output.csv` → Final predictions
 * `log.txt` → Chat transcript
 
----
 
-## 📊 Output Format
-
-The generated CSV contains:
-
-| ticket | domain | issue | escalate | response |
-| ------ | ------ | ----- | -------- | -------- |
-
----
-
-## 🧪 Example
-
-**Input Ticket:**
-
-```
-I was charged twice for my payment
-```
-
-**Output:**
-
-```
-Domain: Visa
-Issue: Billing
-Escalate: True
-Response: Escalated to human support
-```
-
----
-
-## 🚧 Future Improvements
-
-* 🔹 Use ML/NLP models for better classification
-* 🔹 Implement vector search (FAISS) for smarter retrieval
-* 🔹 Add LLM-based reasoning
-* 🔹 Improve domain detection accuracy
-* 🔹 Build web interface (optional)
-
----
-
-## 👨‍💻 Author
+##  Author
 
 Built as part of a hackathon submission.
 
----
 
 ## 🏁 Conclusion
 
@@ -185,4 +140,3 @@ This project demonstrates a **safe, structured, and scalable approach** to build
 * Handle sensitive cases responsibly
 * Provide reliable assistance across domains
 
----
