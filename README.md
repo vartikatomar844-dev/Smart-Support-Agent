@@ -121,7 +121,7 @@ python main.py
 
 
 
-## 🏁 Conclusion
+## Conclusion
 
 This project demonstrates a **safe, structured, and scalable approach** to building AI-powered support systems that:
 
