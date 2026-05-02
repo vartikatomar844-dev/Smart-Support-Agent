@@ -1,1 +1,66 @@
 
+[ LOGIN ISSUES ]
+
+
+If you see a generic error message when attempting to log in to your Claude account, then-
+
+Ensure you’re not using a VPN when accessing Claude.
+
+Disable any browser extensions that you currently have active.
+
+Clear your browser’s cache and cookies.
+
+If you're still seeing an error, check our status page for active incidents.
+
+
+
+
+[ ACCOUNT HELP ]
+
+
+Log in to your Claude account.
+
+Click your initials or name in the lower left corner and select “Get help” from the menu.
+
+In the support messenger:
+
+Search help resources
+
+Chat with Fin, our AI support bot
+
+Click “Send us a message” to start chatting with Fin.
+
+Click "Accept," then select your issue from the available options.
+
+Depending on the selected issue, provide additional details when prompted.
+
+
+
+[ GENERAL SUPPORT ]
+
+
+Instructions are account-wide settings that help Claude understand your general instructions that Claude should consider in responses.
+
+To set your instructions:
+
+Click your initials in the lower left corner.
+
+Select "Settings."
+
+Under "Instructions for Claude," describe your instructions, such as:
+
+Your preferred approaches or methods
+
+Common terms or concepts you use
+
+Typical scenarios you encounter
+
+General communication instructions
+
+Any instructions you add here will be applied to all of your conversations with Claude.
+
+
+
+
+If your issue requires additional investigation or input from our Product Support team, Fin will pass your inquiry along and someone will respond via email.
+
