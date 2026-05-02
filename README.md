@@ -1,6 +1,6 @@
 # Smart-Support-Agent
 
-# Multi-Domain Support Triage Agent
+## Multi-Domain Support Triage Agent
 
 ## Overview
 
